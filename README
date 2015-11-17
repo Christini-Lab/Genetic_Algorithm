@@ -32,7 +32,9 @@ Subtree installation:
   git commit -m "Genetic_Algorithm merged as subtree"
 
 Updating the Genetic_Algorithm subtree:
-  
+  # Pull changes from Genetic_Algorithm master branch. If using another branch,
+    change master accordingly.
+  git pull -s subtree Genetic_Algorithm master
 
 Christini Lab modifications:
   * Separated directory structure, which includes examples and documentation
