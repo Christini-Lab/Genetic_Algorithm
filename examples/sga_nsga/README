@@ -1,0 +1,6 @@
+Main function derived from original IlliGAL code. See IlliGAL pdf for more
+information in the ../../docs/IlliGAL folder.
+
+To run:
+  make
+  ./run <INPUT FILE>

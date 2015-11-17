@@ -1,0 +1,211 @@
+# Input file for the GA Toolbox
+# Author: Kumara Sastry
+# Date: April, 2006
+#
+
+#
+# GA type: SGA or NSGA
+#
+NSGA
+
+#
+# Number of decision variables
+#
+3
+
+#
+# For each decision variable, enter: 
+# 	decision variable type, Lower bound, Upper bound	 
+# Decision variable type can be double or int
+#
+double -5.0 5.0
+double -5.0 5.0
+double -5.0 5.0
+
+#
+# Objectives: 
+#	Number of objectives
+#	For each objective enter the optimization type: Max or Min
+#
+2
+Min
+Min
+
+#
+# Constraints:
+#	Number of constraints
+#	For each constraint enter a penalty weight 
+#
+0
+
+#
+# General parameters: If these parameters are not entered default
+#                     values will be chosen. However you must enter 
+#                     "default" in the place of the parameter.
+#	[population size]
+#	[maximum generations]
+#	[replace proportion]
+#
+400
+250
+0.9
+
+#
+# Niching (for maintaining multiple solutions)
+# To use default setting type "default"
+#  Usage: Niching type, [parameter(s)...]
+#  Valid Niching types and optional parameters are:
+#	NoNiching
+#	Sharing [niching radius] [scaling factor]
+#	RTS [Window size]
+#	DeterministicCrowding
+#
+#  When using NSGA, it must be NoNiching (OFF).
+#
+NoNiching
+
+#
+# Selection
+#  Usage: Selection type, [parameter(s)...]
+#  To use the default setting type "default"
+#
+#  Valid selection types and optional parameters are:
+#	RouletteWheel
+#	SUS
+#	TournamentWOR [tournament size]
+#	TournamentWR [tournament size]
+#	Truncation [# copies]
+#
+#  When using NSGA, it can be neither SUS nor RouletteWheel.
+#
+TournamentWOR 2
+
+#
+# Crossover
+#  Crossover probability
+#  To use the default setting type "default"
+#
+#  Usage: Crossover type, [parameter(s)...]
+#  To use the default crossover method type "default"
+#  Valid crossover types and optional parameters are
+#	OnePoint
+#	TwoPoint
+#	Uniform [genewise swap probability]
+#	SBX [genewise swap probability][order of the polynomial]
+#
+0.9
+SBX 0.5 10
+
+#
+# Mutation
+#  Mutation probability
+#  To use the default setting type "default"
+#
+#  Usage: Mutation type, [parameter(s)...]
+#  Valid mutation types and the optional parameters are:
+#	Selective
+#	Polynomial [order of the polynomial]
+#	Genewise [sigma for gene #1][sigma for gene #2]...[sigma for gene #ell]
+#
+0.1
+Polynomial 20
+
+#
+# Scaling method
+#  To use the default setting type "default"
+#
+#  Usage: Scaling method, [parameter(s)...]
+#  Valid scaling methods and optional parameters are:
+#	NoScaling
+#	Ranking
+#	SigmaScaling [scaling parameter]
+#
+NoScaling
+
+#
+# Constraint-handling method
+# To use the default setting type "default"
+#
+# Usage: Constraint handling method, [parameters(s)...]
+# Valid constraint handling methods and optional parameters are
+#	NoConstraints
+#	Tournament
+#	Penalty [Linear|Quadratic]
+#
+NoConstraints
+
+#
+# Local search method
+# To use the default setting type "default"
+#
+# Usage: localSearchMethod, [maxLocalTolerance], [maxLocalEvaluations], 
+#		[initialLocalPenaltyParameter], [localUpdateParameter], 
+#		[lamarckianProbability], [localSearchProbability]
+#
+# Valid local search methods are: NoLocalSearch and SimplexSearch
+#
+# For example, SimplexSearch 0.001000 20 0.500000 2.000000 0.000000 0.000000
+NoLocalSearch
+
+#
+# Stopping criteria
+# To use the default setting type "default"
+#
+# Number of stopping criterias
+#
+# If the number is greater than zero
+#    Number of generation window
+#    Stopping criterion, Criterion parameter
+#
+# Valid stopping criterias and the associated parameters are
+#	NoOfEvaluations, Maximum number of function evaluations
+#	FitnessVariance, Minimum fitness variance
+#	AverageFitness, Maximum value
+#	AverageObjective, Max/Min value
+#	ChangeInBestFitness, Minimum change
+#	ChangeInAvgFitness, Minimum change
+#	ChangeInFitnessVar, Minimum change
+#	ChangeInBestObjective, Minimum change
+#	ChangeInAvgObjective, Minimum change
+#	NoOfFronts (NSGA only), Minimum number
+#	NoOfGuysInFirstFront (NSGA only), Minimum number
+#	ChangeInNoOfFronts (NSGA only), Minimum change
+#	BestFitness (SGA with NoNiching only), Maximum value
+#
+0
+
+#
+# Load the initial population from a file or not
+# To use the default setting type "default"
+#
+# Usage: Load population (0|1)
+#
+# For example, if you want random initialization type 0
+# On the other and if you want to load the initial population from a
+# file, type
+# 	1 <population file name> [0|1]
+#
+# Valid options for "Load population" are 0/1
+# If you type "1" you must specify the name of the file to load the
+# population from. The second optional parameter which indicates 
+# whether to evaluate the individuals of the loaded population or not.
+0
+
+# Save the evaluated individuals to a file 
+#
+# To use default setting type "default".
+#
+# Here by default all evaluated individuals are stored and you will be
+# asked for a file name later when you run the executable.
+# 
+# Usage: Save population (0|1)
+# For example, if you don't want to save the evaluated solutions type 0
+# On the other and if you want to save the evaluated solutions
+# 	1 <save file name>
+#
+# Note that the evaluated solutions will be appended to the file.
+#
+# Valid options for "Save population" are 0/1
+# If you type "1" you must specify the name of the file to save the
+# population to.
+1 evaluatedSolutions.txt
