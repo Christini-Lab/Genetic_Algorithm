@@ -49,7 +49,7 @@ Documentation:
   Illigal: Original report/instructions from IlliGAL.
 
 Development Notes:  
-  Branching:
+  Branching:  
     * Create new development branch for any unfinished features
     * Features deemed to be necessity will be merged into master branch
     * Optional features will be kept as separate feature branches
