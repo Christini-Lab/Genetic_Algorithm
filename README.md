@@ -36,7 +36,7 @@ Updating the Genetic_Algorithm subtree:
     change master accordingly.
   git pull -s subtree Genetic_Algorithm master
 
-Christini Lab modifications:
+Christini Lab modifications:  
   * Separated directory structure, which includes examples and documentation
   * Bulk of functions separated out of main function for easier readability and
     development
@@ -45,15 +45,15 @@ Christini Lab modifications:
 Examples:
   sga_nsga: Original example from IllGAL. Contains 4 different setting files.
 
-Documentation:
+Documentation: 
   Illigal: Original report/instructions from IlliGAL.
 
-Development Notes:
+Development Notes:  
   Branching:
     * Create new development branch for any unfinished features
     * Features deemed to be necessity will be merged into master branch
     * Optional features will be kept as separate feature branches
-  Code style:
+  Code style:  
     * Follow 80 column rule
     * No dangling whitespace
     * New code generally follows Google C++ style
