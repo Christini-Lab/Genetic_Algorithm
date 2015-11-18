@@ -16,8 +16,9 @@ Subtree installation:
   cd <PROJECT DIRECTORY>
 
   # Add remote URL of GA to your local project
+```
   git remote add -f Genetic_Algorithm https://pbtech-vc.med.cornell.edu/git/christini-lab/Genetic_Algorithm.git
-
+```
   # Merge master branch of Genetic Algorithm into local project. This will not
     change any of your files locally. You can replace master with any other
     branch you wish to use.
