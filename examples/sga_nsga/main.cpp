@@ -33,18 +33,18 @@ void globalEvaluate(double *x, double *objArray, double *constraintViolation,
   int ii;
   FILE *outEvals;
 
-  for(ii = 0; ii < globalSetup->finalNoOfObjectives; ii++)
+  for (ii = 0; ii < globalSetup->finalNoOfObjectives; ii++)
     objArray[ii] = 0.0;
 
-  if(globalSetup->gaType == SGA) {
+  if (globalSetup->gaType == SGA) {
     *objArray = (x[0]*x[0] + x[1] - 11.0)*(x[0]*x[0] + x[1] - 11.0) +
         (x[0] + x[1]*x[1] - 7.0)*(x[0] + x[1]*x[1] - 7.0);
 
     constraintViolation[0] = (x[0]-5.0)*(x[0]-5.0) + x[1]*x[1] - 26.0;
-    if(constraintViolation[0] <= 0.0) constraintViolation[0] = 0.0;
+    if (constraintViolation[0] <= 0.0) constraintViolation[0] = 0.0;
 
     constraintViolation[1] = 4*x[1] + x[2] - 20.0;
-    if(constraintViolation[1] <= 0.0) constraintViolation[1] = 0.0;
+    if (constraintViolation[1] <= 0.0) constraintViolation[1] = 0.0;
   }
   else {
     objArray[0] = -10*exp(-0.2*sqrt(x[0]*x[0] + x[1]*x[1])) -
@@ -56,16 +56,16 @@ void globalEvaluate(double *x, double *objArray, double *constraintViolation,
 
 #pragma omp ordered
   {
-    if(globalSetup->savePopulation) {
+    if (globalSetup->savePopulation) {
       outEvals = fopen(globalSetup->saveEvalSolutions, "a");
-      for(ii = 0; ii < globalSetup->noOfDecisionVariables; ii++) {
+      for (ii = 0; ii < globalSetup->noOfDecisionVariables; ii++) {
         fprintf(outEvals, "%f\t", x[ii]);
       }
-      for(ii = 0; ii < globalSetup->finalNoOfObjectives; ii++) {
+      for (ii = 0; ii < globalSetup->finalNoOfObjectives; ii++) {
         fprintf(outEvals, "%f\t", objArray[ii]);
       }
-      if(globalSetup->finalNoOfConstraints > 0) {
-        for(ii = 0; ii < globalSetup->finalNoOfConstraints; ii++) {
+      if (globalSetup->finalNoOfConstraints > 0) {
+        for (ii = 0; ii < globalSetup->finalNoOfConstraints; ii++) {
           fprintf(outEvals, "%f\t", constraintViolation[ii]);
         }
         fprintf(outEvals, "%f", *penalty);
