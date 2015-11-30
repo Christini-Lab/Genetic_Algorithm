@@ -17,7 +17,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <vector>
 
 #define SWAP(A,B)    (A^=B^=A^=B)
 #define ZERO         1.0E-10
@@ -121,9 +120,6 @@ public:
     char *populationFileName;
     bool savePopulation;
     char *saveEvalSolutions;
-
-    // Custom objective function parameters
-    std::vector< std::vector<double> > objectiveTraces;
 
     ~GlobalSetup();
 };
