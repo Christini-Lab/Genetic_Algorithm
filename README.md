@@ -6,12 +6,12 @@ Christini Lab version of the genetic algorithm originally published by
 Kumara Sastry at the Illinois Genetic Algorithms Laboratory (IlliGAL).
 
 Reference:
-> Single & Multi-Objective Real-Coded Genetic Algorithms Code
-> Author: Kumara Sastry
-> Illinois Genetic Algorithms Laboratory (IlliGAL)
-> Deparment of General Engineering
-> University of Illinois at Urbana-Champaign
-> 104 S. Mathews Ave, Urbana, IL 61801
+> Single & Multi-Objective Real-Coded Genetic Algorithms Code  
+> Author: Kumara Sastry  
+> Illinois Genetic Algorithms Laboratory (IlliGAL)  
+> Deparment of General Engineering  
+> University of Illinois at Urbana-Champaign  
+> 104 S. Mathews Ave, Urbana, IL 61801  
 
 This repository is intended to be used as a subtree of a fitting project. Follow
 the directions below to add/update the genetic algorithm to your repository.
