@@ -1210,16 +1210,15 @@ int run_GA(int argc, char *argv[]) {
 
   if(globalSetup->savePopulation) {
     fOutput = fopen(globalSetup->saveEvalSolutions, "w");
-    fprintf(fOutput, "%% ");
     for(ii = 0; ii < globalSetup->noOfDecisionVariables; ii++) {
-      fprintf(fOutput, "var #%d\t", ii);
+      fprintf(fOutput, "var#%d\t", ii);
     }
     for(ii = 0; ii < globalSetup->finalNoOfObjectives; ii++) {
-      fprintf(fOutput, "obj #%d\t", ii);
+      fprintf(fOutput, "obj#%d\t", ii);
     }
     if(globalSetup->finalNoOfConstraints > 0) {
       for(ii = 0; ii < globalSetup->finalNoOfConstraints; ii++) {
-        fprintf(fOutput, "const #%d\t", ii);
+        fprintf(fOutput, "const#%d\t", ii);
       }
       fprintf(fOutput, "penalty");
     }
