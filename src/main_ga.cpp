@@ -73,20 +73,15 @@ static char* readOneLine(char *pcBuf, int iMaxSize, FILE *fStream) {
   return (pToken);
 }
 
-int run_GA(int argc, char *argv[]) {
+int run_GA(char *inputFileName) {
   int ii;
   const int ciBufSize = 1024;
   char *pToken, caBuf[ciBufSize];
   FILE *fInput, *fOutput;
 
-  if(argc != 2) {
-    printf("Error! Usage is GAtbx inputfile\n");
-    exit(1);
-  }
-
-  fInput = fopen(argv[1], "r");
+  fInput = fopen(inputFileName, "r");
   if (fInput == NULL) {
-    printf("Error! opening file %s\n", argv[1]);
+    printf("Error! opening file %s\n", inputFileName);
     exit(1);
   }
 

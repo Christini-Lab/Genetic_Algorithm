@@ -18,6 +18,6 @@
 #include <fstream>
 
 static char* readOneLine(char *pcBuf, int iMaxSize, FILE *fStream);
-int run_GA(int argc, char *argv[]);
+int run_GA(char *argv);
 
 #endif

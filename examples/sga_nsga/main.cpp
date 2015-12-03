@@ -23,6 +23,7 @@
 #include "../../include/globalSetup.hpp"
 
 #include <fstream>
+#include <cstdlib>
 
 GlobalSetup *globalSetup;
 Random myRandom;
@@ -78,6 +79,12 @@ void globalEvaluate(double *x, double *objArray, double *constraintViolation,
 }
 
 int main(int argc, char *argv[]) {
-  run_GA(argc, argv);
+  // Requires one argument, GA input file
+  if(argc != 2) {
+    std::cout << "Error: GA input file required" << std::endl;
+    std::exit(EXIT_FAILURE);
+  }
+
+  run_GA(argv[1]);
   return 1;
 }
