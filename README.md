@@ -25,35 +25,33 @@ cd <PROJECT DIRECTORY>
 ```
 
 Add remote URL of GA to your local project.
+  * **-f** - fetch from remote immediately
+  * **GA_remote** - Name of remote, you can change this
 ```sh
-git remote add -f Genetic_Algorithm https://pbtech-vc.med.cornell.edu/git/christini-lab/Genetic_Algorithm.git
+git remote add -f GA_remote https://pbtech-vc.med.cornell.edu/git/christini-lab/Genetic_Algorithm.git
 ```
 
-Merge master branch of Genetic Algorithm into local project. This will not
-change any of your files locally. You can replace master with any other
-branch you wish to use.
+Add genetic algorithm as a subtree of the project.
+  * **--prefix=Genetic_Algorithm/** - prefix denotes the directory you wish to
+  put the GA in, you can change this
+  * **--squash** - merges all commits into one for cleaner history
 ```sh
-git merge -s ours --no-commit Genetic_Algorithm/master
-```
-
-Create a new directory called "Genetic_Algorithm" (You can change this to
-whatever you wish after --prefix=) and copy Git history of master branch of
-the Genetic_Algorithm repository.
-```sh
-git read-tree --prefix=Genetic_Algorithm/ -u Genetic_Algorithm/master
+git subtree add --prefix=Genetic_Algorithm/ https://pbtech-vc.med.cornell.edu/git/christini-lab/Genetic_Algorithm.git master --squash
 ```
 
 Commit the changes.
 ```sh
-git commit -m "Genetic_Algorithm merged as subtree"
+git commit -m "Added genetic algorithm as subtree."
 ```
 
 
 ### Updating the Genetic_Algorithm subtree:
-Pull changes from Genetic_Algorithm master branch. If using another branch,
-change master accordingly.
+Fetch any new changes, then pull changes into subtree directory.
+  * **master** - Pulling in master branch changes, you can specify another
+  branch if required
 ```sh
-git pull -s subtree Genetic_Algorithm master
+git fetch GA_remote master
+git subtree pull --prefix=Genetic_Algorithm/ GA_remote master --squash
 ```
 
 
