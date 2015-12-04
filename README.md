@@ -29,8 +29,7 @@ Add remote URL of GA to your local project.
   * **GA_remote** - Name of remote, you can change this
 
 ```sh
-git remote add -f GA_remote https://pbtech-vc.med.cornell.edu/git/christini-lab/
-  Genetic_Algorithm.git
+git remote add -f GA_remote https://pbtech-vc.med.cornell.edu/git/christini-lab/Genetic_Algorithm.git
 ```
 
 Add genetic algorithm as a subtree of the project.
@@ -39,8 +38,7 @@ Add genetic algorithm as a subtree of the project.
   * **--squash** - merges all commits into one for cleaner history
 
 ```sh
-git subtree add --prefix=Genetic_Algorithm/ https://pbtech-vc.med.cornell.edu/
-  git/christini-lab/Genetic_Algorithm.git master --squash
+git subtree add --prefix=Genetic_Algorithm/ https://pbtech-vc.med.cornell.edu/git/christini-lab/Genetic_Algorithm.git master --squash
 ```
 
 Commit the changes.
