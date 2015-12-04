@@ -27,16 +27,20 @@ cd <PROJECT DIRECTORY>
 Add remote URL of GA to your local project.
   * **-f** - fetch from remote immediately
   * **GA_remote** - Name of remote, you can change this
+
 ```sh
-git remote add -f GA_remote https://pbtech-vc.med.cornell.edu/git/christini-lab/Genetic_Algorithm.git
+git remote add -f GA_remote https://pbtech-vc.med.cornell.edu/git/christini-lab/
+  Genetic_Algorithm.git
 ```
 
 Add genetic algorithm as a subtree of the project.
   * **--prefix=Genetic_Algorithm/** - prefix denotes the directory you wish to
   put the GA in, you can change this
   * **--squash** - merges all commits into one for cleaner history
+
 ```sh
-git subtree add --prefix=Genetic_Algorithm/ https://pbtech-vc.med.cornell.edu/git/christini-lab/Genetic_Algorithm.git master --squash
+git subtree add --prefix=Genetic_Algorithm/ https://pbtech-vc.med.cornell.edu/
+  git/christini-lab/Genetic_Algorithm.git master --squash
 ```
 
 Commit the changes.
@@ -49,8 +53,10 @@ git commit -m "Added genetic algorithm as subtree."
 Fetch any new changes, then pull changes into subtree directory.
   * **master** - Pulling in master branch changes, you can specify another
   branch if required
+
 ```sh
 git fetch GA_remote master
+
 git subtree pull --prefix=Genetic_Algorithm/ GA_remote master --squash
 ```
 
