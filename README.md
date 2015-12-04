@@ -1,5 +1,5 @@
 # Christini Lab Genetic Algorithm
-
+---
 
 ### Introduction
 Christini Lab version of the genetic algorithm originally published by
