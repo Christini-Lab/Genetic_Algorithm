@@ -1196,8 +1196,10 @@ int run_GA(char *inputFileName) {
       char time[18]; // holds "2013-12-01_21.31_"
       strftime( time, 18, "%Y.%m-%d_%H.%M_", localtime( &t ) );
       strcpy(globalSetup->saveEvalSolutions, time);
-#endif
       strcat(globalSetup->saveEvalSolutions, pToken);
+#else
+      strcpy(globalSetup->saveEvalSolutions, pToken);
+#endif
     }
   }
   fclose(fInput);
