@@ -41,11 +41,6 @@ Add genetic algorithm as a subtree of the project.
 git subtree add --prefix Genetic_Algorithm/ https://pbtech-vc.med.cornell.edu/git/christini-lab/Genetic_Algorithm.git master --squash
 ```
 
-Commit the changes.
-```sh
-git commit -m "Added genetic algorithm as subtree."
-```
-
 
 ### Updating the Genetic_Algorithm subtree:
 Fetch any new changes, then pull changes into subtree directory.
