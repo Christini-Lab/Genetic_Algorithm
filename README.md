@@ -35,15 +35,18 @@ git remote add -f GA_remote https://pbtech-vc.med.cornell.edu/git/christini-lab/
 Add genetic algorithm as a subtree of the project.
   * **--prefix Genetic_Algorithm/** - prefix denotes the directory you wish to
   put the GA in, you can change this
+  * **GA_remote** - Model remote repository set earlier
   * **--squash** - merges all commits into one for cleaner history
 
 ```sh
-git subtree add --prefix Genetic_Algorithm/ https://pbtech-vc.med.cornell.edu/git/christini-lab/Genetic_Algorithm.git master --squash
+git subtree add --prefix Genetic_Algorithm/ GA_remote --squash
 ```
 
 
 ### Updating the Genetic_Algorithm subtree:
 Fetch any new changes, then pull changes into subtree directory.
+  * **--prefix Genetic_Algorithm/** - Specify the model directory
+  * **GA_remote** - Model repository you will pull changes from
   * **master** - Pulling in master branch changes, you can specify another
   branch if required
 
