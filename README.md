@@ -55,6 +55,26 @@ git subtree pull --prefix Genetic_Algorithm/ GA_remote master --squash
 ```
 
 
+### Loading initial populations:
+A population file should be formated as follows:
+* Number of solutions/individuals to be loaded
+* Parameter values (one set of variables for each individual)
+* Objective values (for each individual)
+* Constraint values (for each individual)
+* Penalty values (for each individual)
+
+Example file below contains:
+- **2** individuals
+- **10** parameter values set to **1.0**
+- objective values set to **5**
+
+>2 
+>
+>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 5 
+>
+>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 5
+
+
 ### Christini Lab modifications:
  * Separated directory structure, which includes examples and documentation
  * Bulk of functions separated out of main function for easier readability and
