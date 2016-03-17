@@ -86,5 +86,5 @@ int main(int argc, char *argv[]) {
   }
 
   run_GA(argv[1]);
-  return 1;
+  return EXIT_SUCCESS;
 }
