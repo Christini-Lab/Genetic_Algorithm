@@ -73,7 +73,7 @@ static char* readOneLine(char *pcBuf, int iMaxSize, FILE *fStream) {
   return (pToken);
 }
 
-int run_GA(char *inputFileName) {
+void setup_GA(char *inputFileName) {
   int ii;
   const int ciBufSize = 1024;
   char *pToken, caBuf[ciBufSize];
@@ -1222,7 +1222,59 @@ int run_GA(char *inputFileName) {
     fprintf(fOutput, "\n");
     fclose(fOutput);
   }
+}
 
+int run_GA(char *inputFileName) {
+  int ii;
+
+  setup_GA(inputFileName);
+
+  GA ga;
+  if (globalSetup->gaType == SGA) {
+    while(ga.generate());
+  }
+  else {
+    while(ga.nsgaGenerate());
+  }
+
+  delete [](globalSetup->penaltyWeights);
+  delete [](globalSetup->variableTypes);
+  for(ii = 0; ii < globalSetup->noOfDecisionVariables; ii++) {
+    delete [](globalSetup->variableRanges[ii]);
+  }
+  delete [](globalSetup->variableRanges);
+  delete [](globalSetup->typeOfOptimizations);
+  if((globalSetup->selectionType == TournamentWR)||
+     (globalSetup->selectionType == TournamentWOR)||
+     (globalSetup->selectionType == Truncation)) {
+    delete [](int*)(globalSetup->selectionParameters);
+  }
+  if((globalSetup->xOverType==Uniform)||(globalSetup->xOverType == SBX))
+    delete [](double*)(globalSetup->xOverParameters);
+  if(globalSetup->mutationType == Polynomial)
+    delete [](int*)(globalSetup->mutationParameters);
+  else if(globalSetup->mutationType == Genewise)
+    delete [](double*)(globalSetup->mutationParameters);
+  if(globalSetup->nichingType == RTS)
+    delete [](int*)(globalSetup->nichingParameters);
+  if(globalSetup->nichingType == Sharing)
+    delete [](double*)(globalSetup->nichingParameters);
+  if(globalSetup->scalingMethod == SigmaScaling)
+    delete [](double*)(globalSetup->scalingParameters);
+  if(globalSetup->noOfStoppingCriterias > 0) {
+    delete [] globalSetup->otherStoppingCriteria;
+    delete [](double*)(globalSetup->stoppingParameter);
+  }
+  if(globalSetup->loadPopulation)
+    delete [](globalSetup->populationFileName);
+  if(globalSetup->savePopulation)
+    delete [](globalSetup->saveEvalSolutions);
+
+  return 1;
+}
+
+int run_GA() {
+  int ii;
   GA ga;
   if (globalSetup->gaType == SGA) {
     while(ga.generate());
