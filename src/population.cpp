@@ -37,9 +37,11 @@ Population::Population() {
     for (int ii=0; ii<globalSetup->populationSize; ii++)
       guys[ii] = new Individual;
 
+    if(!(globalSetup->loadPopulation)) {
 #pragma omp parallel for ordered schedule(dynamic)
-    for (int ii=0; ii<globalSetup->populationSize; ii++)
-      guys[ii]->evaluateFitness();
+      for (int ii=0; ii<globalSetup->populationSize; ii++)
+        guys[ii]->evaluateFitness();
+    }
     for (int ii=0; ii<globalSetup->populationSize; ii++)
       newGuys[ii] = new Individual(guys[ii]);
   }
