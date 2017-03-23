@@ -1201,6 +1201,8 @@ void setup_GA(char *inputFileName) {
       strcpy(globalSetup->saveEvalSolutions, pToken);
 #endif
     }
+    else
+      globalSetup->savePopulation = false;
   }
   fclose(fInput);
   fflush(stdout);
