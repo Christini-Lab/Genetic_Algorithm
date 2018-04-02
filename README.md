@@ -29,7 +29,7 @@ Add remote URL of GA to your local project.
   * **GA_remote** - Name of remote, you can change this
 
 ```sh
-git remote add -f GA_remote https://pbtech-vc.med.cornell.edu/git/christini-lab/Genetic_Algorithm.git
+git remote add -f GA_remote https://github.com/Christini-Lab/Genetic_Algorithm.git
 ```
 
 Add genetic algorithm as a subtree of the project.
